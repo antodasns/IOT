@@ -16,7 +16,9 @@ Docker compose for easy deploment.<br />
 
     Command: docker compose up
 
-2.Register user
+2.You can import the postman collection or follow the below
+
+3.Register user
 
     API: http://localhost:8080/user/register
     Body: {
@@ -24,7 +26,7 @@ Docker compose for easy deploment.<br />
         "password":"masterpass"
     }
 
-3.Get authorization tocken
+4.Get authorization tocken
 
     API: http://localhost:8080/authenticate
     Body: {
@@ -34,7 +36,7 @@ Docker compose for easy deploment.<br />
 
     Will get a bearer tocken from this api use this tocken in the authorisation header for the below requests
 
-4: http://localhost:8080/devices
+5: http://localhost:8080/devices
 
     This request will save a device and call the "thingwire.devices.events" topic
 
@@ -42,11 +44,11 @@ Docker compose for easy deploment.<br />
 
     Get the device by id
 
-5: http://localhost:8080/devices/d84987f3-99c1-44d1-9107-629626dcb06a/send-command-status   
+7: http://localhost:8080/devices/d84987f3-99c1-44d1-9107-629626dcb06a/send-command-status   
 
     This request will save a device and call the "thingwire.devices.commands" topic
 
-5: http://localhost:8080/devices/d84987f3-99c1-44d1-9107-629626dcb06a/OFFLINE/send-command-status   
+8: http://localhost:8080/devices/d84987f3-99c1-44d1-9107-629626dcb06a/OFFLINE/send-command-status   
     
     This request will trigger kafka topic "thingwire.devices.responses" 
     and update device status to offline

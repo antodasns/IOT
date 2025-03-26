@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "835f9221-c63b-4645-8043-f6a52712bb21",
+		"name": "IOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12134338"
+	},
+	"item": [
+		{
+			"name": "Add Device",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXN0ZXIiLCJleHAiOjE3NDI5Mjk3MzV9.AFQ4oDqhK6y0tuXnSlzS1e609yi2IvQ3RpoF2fd9v4iyPM1RfUcnHkddrd5VkA6YshLe6XPrKVG7XwIeGHRUrA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Device A\",\r\n  \"status\": \"ONLINE\",\r\n  \"lastSeen\": \"2025-03-24T14:30:00\",\r\n  \"metadata\": {\r\n    \"ip\": \"192.168.1.1\",\r\n    \"location\": \"Warehouse A\",\r\n    \"firmwareVersion\": \"1.0.5\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/devices"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXN0ZXIiLCJleHAiOjE3NDI5Mjk3MzV9.AFQ4oDqhK6y0tuXnSlzS1e609yi2IvQ3RpoF2fd9v4iyPM1RfUcnHkddrd5VkA6YshLe6XPrKVG7XwIeGHRUrA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/devices/d84987f3-99c1-44d1-9107-629626dcb06a/OFFLINE/send-command-status"
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Master\",\r\n    \"password\":\"masterpass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Device",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNYXN0ZXIiLCJleHAiOjE3NDI5Mjk3MzV9.AFQ4oDqhK6y0tuXnSlzS1e609yi2IvQ3RpoF2fd9v4iyPM1RfUcnHkddrd5VkA6YshLe6XPrKVG7XwIeGHRUrA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/devices/d84987f3-99c1-44d1-9107-629626dcb06a"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Master\",\r\n    \"password\":\"masterpass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/user/register"
+			},
+			"response": []
+		}
+	]
+}
